@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: #FF8C42;
+    --primary-foreground: 210 40% 98%;
+
+    --primary-soft: #FFB088;
+    --secondary-soft: #FFE4D6;
+
+    --secondary: #FF8C42;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: #FFA07A;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 1rem;
+
+    --text: #2C3E50;
+    --text-soft: #7F8C8D;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-[#FFE4D6] via-white to-[#FFE4D6];
+    font-family: system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .glass {
+    @apply bg-white/50 backdrop-blur-lg border border-white/40 rounded-2xl shadow-lg;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md p-6 space-y-4;
+  }
+
+  .title {
+    font-family: 'Pacifico', cursive;
+    @apply bg-gradient-to-r from-[#FF8C42] to-[#FFA07A] bg-clip-text text-transparent;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-[#FF8C42] to-[#FF8C42] bg-clip-text text-transparent;
+  }
+
+  .btn {
+    @apply px-4 py-2 rounded-lg shadow-md transition-all duration-300 font-medium;
+  }
+
+  .btn-primary {
+    @apply bg-[#FF8C42] text-white hover:bg-[#FFB088] transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-[#FF8C42] to-[#FFA07A] text-white hover:opacity-90;
+  }
+
+  .btn-circle {
+    @apply w-10 h-10 rounded-full flex items-center justify-center bg-[#FF8C42] text-white 
+    hover:bg-[#FFB088] transition-colors duration-300;
+  }
+
+  .input {
+    @apply border-2 border-[#FF8C42]/30 rounded-lg px-4 py-2 bg-white/80 
+    focus:border-[#FF8C42] focus:outline-none focus:ring-2 focus:ring-[#FF8C42]/20;
+  }
+
+  .textarea {
+    @apply input min-h-[100px] resize-none;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 1s ease-in;
+  }
+
+  @media (max-width: 640px) {
+    .title {
+      @apply text-2xl;
+    }
+    .btn {
+      @apply px-3 py-1.5 text-sm;
+    }
+    .card {
+      @apply p-4;
+    }
+  }
+}
